@@ -1,5 +1,5 @@
 ---
-title: "Data Importt"
+title: "Data Import"
 output: github_document
 ---
 
@@ -41,3 +41,18 @@ skimr::skim(litters_df)
 ```
 
 Can also use the view function directly in the console
+
+## Options to read csv
+
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", skip = 10, col_names = FALSE)
+```
+
+A good way to skip first rows or to make the first rows not the column names. 
+
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", no = c("", "NA", ".", 999))
+```
+ Option to omit missing data
+ 
+ Check out `?read_csv()` for more information 
