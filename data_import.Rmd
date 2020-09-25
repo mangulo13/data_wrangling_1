@@ -13,15 +13,31 @@ Read in the litters dataset.
 
 ```{r}
 litters_df = read_csv("./data/FAS_litters.csv")
-literrs_df = janitor::clean_names(litters_df)
+litters_df = janitor::clean_names(litters_df)
 ```
 
-The two colons after janitor tells R to pull from the Janitor package 
+The two colons after janitor tells R to pull from the Janitor package. Helps for when we want to pull just one item from package
 
 
 ## Take a look at the data.
 
+Printing in the console to see everything going in.
 ```{r}
-
+litters_df
 ```
 
+dbl is double which is essentially a number
+
+```{r}
+head(litters_df)
+```
+
+```{r}
+tail(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
+```
+
+Can also use the view function directly in the console
