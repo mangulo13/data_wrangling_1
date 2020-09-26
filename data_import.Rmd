@@ -5,6 +5,8 @@ output: github_document
 
 ```{r setup}
 library(tidyverse)
+library(readxl)
+library(haven)
 ```
 
 ## Read in some data
@@ -50,9 +52,30 @@ litters_df = read_csv("./data/FAS_litters.csv", skip = 10, col_names = FALSE)
 
 A good way to skip first rows or to make the first rows not the column names. 
 
-```{r}
-litters_df = read_csv("./data/FAS_litters.csv", no = c("", "NA", ".", 999))
+```{r include = FALSE}
+litters_df = read_csv("./data/FAS_litters.csv")
 ```
- Option to omit missing data
+
+Option to omit missing data
  
- Check out `?read_csv()` for more information 
+Check out `?read_csv()` for more information. 
+ 
+## Other file formats
+
+Read in an excel file 
+ 
+```{r}
+mlb_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
+mlb_df
+```
+
+There are some times when loading the whole library is needed instead of ::. If there are multiple sheets you have to specify which. Can specify range of import by columns and rows. 
+ 
+ Read in a SAS file
+ 
+```{r}
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+pulse_df
+```
+ 
+ 
