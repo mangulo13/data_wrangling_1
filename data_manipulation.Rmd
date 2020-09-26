@@ -59,3 +59,55 @@ select(litters_df, litter_number, everything())
 relocate(litters_df, litter_number)
 ```
 
+Select operates on columns
+
+## `filter`
+
+Operates on rows. Must give a condition for the rows to be kept 
+
+```{r}
+filter(litters_df, gd0_weight < 22)
+```
+
+```{r}
+filter(litters_df, gd0_weight >= 22)
+```
+
+```{r}
+filter(litters_df, gd_of_birth == 20 )
+```
+ Using two equal signs because we want to see if they are equal to each other and not assigning 
+
+```{r}
+filter(litters_df, !(gd_of_birth == 20))
+```
+Shows all those that do not equal twenty 
+
+```{r}
+filter(litters_df, gd0_weight >= 22, gd_of_birth == 20)
+```
+For looking for subset where two conditions are two 
+
+```{r}
+filter(litters_df, group == "Mod8")
+```
+
+```{r}
+filter(litters_df, group %in% c("Con7", "Mod8"))
+```
+If observations are in two groups
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
