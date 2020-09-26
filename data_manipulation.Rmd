@@ -109,6 +109,18 @@ mutate(
 ```
 Changed group to lower case with str_to_lower
 
+## `arrange`
+
+Puts things in order. 
+
+```{r}
+arrange(litters_df, pups_born_alive)
+```
+
+```{r}
+arrange(litters_df, pups_born_alive, gd0_weight)
+```
+Ordering by both weight and pups alive 
 
 
 
