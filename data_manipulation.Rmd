@@ -97,6 +97,19 @@ filter(litters_df, group %in% c("Con7", "Mod8"))
 ```
 If observations are in two groups
 
+## `mutate`
+
+Can modify existing variable or make a new variable
+
+```{r}
+mutate(
+        litters_df, 
+        wt_gain = gd18_weight - gd0_weight,
+        group = str_to_lower(group))
+```
+Changed group to lower case with str_to_lower
+
+
 
 
 
